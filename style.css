@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(rgba(15, 11, 36, 0.95), rgba(0, 0, 0, 0.95)), url(./theatre.jpg) center;
+  background-size: cover;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+}
+
+.movie-container {
+  margin: 20px 0;
+}
+
+.movie-container select {
+  background: #fff;
+  border: 0;
+  border-radius: 3px;
+  margin-left: 10px;
+  padding: 8px 6px;
+  font-size: 14px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.seat {
+  background-color: #444451;
+  height: 16px;
+  width: 20px;
+  margin: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.seat.selected {
+  background-color: #6feaf6;
+}
+
+.seat.occupied {
+  background-color: #fff;
+}
+
+.seat:nth-of-type(2) {
+  margin-right: 28px;
+}
+
+.seat:nth-last-of-type(2) {
+  margin-left: 28px;
+}
+
+.seat:not(.occupied):hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  /* background-color: #6feaf6; */
+}
+
+.showcase .seat.available:hover {
+  background-color: #444451;
+}
+
+.showcase .seat:not(.occupied):hover {
+  cursor: default;
+  transform: scale(1);
+}
+
+.showcase {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 10px 0;
+  border-radius: 4px;
+  list-style: none;
+  display: flex;
+  color: #777;
+  justify-content: space-between;
+}
+
+.showcase li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px
+}
+
+.showcase li small {
+  margin-left: 3px;
+}
+
+.container {
+  perspective: 1000px;
+  margin-bottom: 25px;
+}
+
+.screen {
+  background-color: #fff;
+  height: 100px;
+  margin: 20px 0;
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.781);
+  transform: rotateX(-35deg);
+}
+
+.row {
+  display: flex;
+}
+
+p.text {
+  font-size: 18px;
+}
+
+p.text span {
+  margin: 0 2px;
+  font-weight: 500;
+  color: #6feaf6
+}
