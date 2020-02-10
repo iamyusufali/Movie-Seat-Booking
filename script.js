@@ -9,9 +9,6 @@ updateUI();
 
 let ticketPrice = +movieList.value;
 
-// Initialize seat count and total
-updateCountAndTotal();
-
 // Update UI from local storage data
 function updateUI() {
   const savedSeatIndex = JSON.parse(localStorage.getItem('indexOfSeats'));
@@ -40,9 +37,7 @@ function updateCountAndTotal() {
 
   const seatIndex = [...selectedSeats].map(seat => [...seats].indexOf(seat));
 
-  if (seatIndex.length > 0) {
-    localStorage.setItem('indexOfSeats', JSON.stringify(seatIndex));
-  }
+  localStorage.setItem('indexOfSeats', JSON.stringify(seatIndex));
 
   count.innerText = selectedSeats.length;
   total.innerText = selectedSeats.length * ticketPrice;
@@ -62,4 +57,5 @@ movieList.addEventListener('change', e => {
   updateCountAndTotal();
 });
 
-
+// Initialize seat count and total
+updateCountAndTotal();
